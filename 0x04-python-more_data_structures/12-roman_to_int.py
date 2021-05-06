@@ -12,9 +12,12 @@ def roman_to_int(roman_string):
     n = 0
     if roman_string:
         for roman_n in roman_string:
-            if n >= roman_d[roman_n] or n == 0:
-                n += roman_d[roman_n]
+            if roman_n in roman_d:
+                if n >= roman_d[roman_n] or n == 0:
+                    n += roman_d[roman_n]
+                else:
+                    n = roman_d[roman_n] - n
             else:
-                n = roman_d[roman_n] - n
+                return (0)
         return (n)
     return (0)

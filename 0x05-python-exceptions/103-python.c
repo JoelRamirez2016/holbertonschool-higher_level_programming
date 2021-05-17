@@ -34,6 +34,8 @@ void print_python_list(PyObject *p)
 
 			if (strcmp(item->ob_type->tp_name, "float") == 0)
 				print_python_float(item);
+			else if (strcmp(item->ob_type->tp_name, "bytes") == 0)
+				print_python_bytes(item);
 		}
 	}
 	fflush(stdout);

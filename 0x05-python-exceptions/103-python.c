@@ -31,6 +31,7 @@ void print_python_list(PyObject *p)
 		{
 			item = PyList_GET_ITEM(list, i);
 			printf("Element %i: %s\n", i, item->ob_type->tp_name);
+
 			if (strcmp(item->ob_type->tp_name, "float") == 0)
 				print_python_float(item);
 		}
@@ -45,7 +46,7 @@ void print_python_bytes(PyObject *p)
 {
 	PyVarObject *var = (PyVarObject *) p;
 	PyBytesObject *bytes = (PyBytesObject *) p;
-	int i;
+	int i, size;
 
 	printf("[.] bytes object info\n");
 
@@ -55,10 +56,11 @@ void print_python_bytes(PyObject *p)
 	}
 	else
 	{
+		size = (int) var->ob_size;
 		printf("  size: %lu\n", var->ob_size);
 		printf("  trying string: %s\n", bytes->ob_sval);
-		printf("  first 6 bytes:");
-		for (i = 0; i < var->ob_size && i <= 10; i++)
+		printf("  first %i bytes:", size + 1> 10 ? 10: size + 1);
+		for (i = 0; i <= size && i < 10; i++)
 			printf(" %.2hhx", bytes->ob_sval[i]);
 		printf("\n");
 	}

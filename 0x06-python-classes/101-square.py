@@ -77,9 +77,9 @@ class Square:
         print(square, end="")
 
     def __str__(self):
-        """print the square with the size attr"""
+        """return string representation of square"""
         if self.__size == 0:
-            return ""
+            return "\n"
         square = "".join(["\n" for c in range(self.__position[1])])
         for i in range(0, self.__size):
             square += "".join([" " for c in range(0, self.__position[0])])

@@ -21,14 +21,13 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
-
         if not (type(position) == tuple and
                 len(position) == 2 and
                 type(position[0]) == int and
                 type(position[1]) == int):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
+        self.__size = size
 
     @property
     def position(self):
@@ -64,10 +63,13 @@ class Square:
 
     def my_print(self):
         """print the square with the size attr"""
+        if self.__size == 0:
+            print("")
+            return
         square = "".join(["\n" for c in range(self.__position[1])])
         for i in range(0, self.__size):
             square += "".join([" " for c in range(0, self.__position[0])])
             for j in range(0, self.__size):
                 square += "#"
             square += "\n"
-        print(square, end="" if '#' in square else "\n")
+        print(square, end="")

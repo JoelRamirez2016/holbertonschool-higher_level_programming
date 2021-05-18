@@ -57,7 +57,7 @@ class Square:
 
     def my_print(self):
         """print the square with the size attr"""
-        square = ""
+        square = "".join(["\n" for c in range(self.__position[1])])
         for i in range(0, self.__size):
             square += "".join([" " for c in range(0, self.__position[0])])
             for j in range(0, self.__size):

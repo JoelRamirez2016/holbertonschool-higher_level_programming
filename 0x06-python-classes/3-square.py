@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Define a class Square"""
 
+
 class Square:
     """Square: This class define a Square
 
@@ -8,7 +9,7 @@ class Square:
         size (int): area of the square, must be an integer and >=0
 
     """
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         """ __init__ method (self, size).
 
         Args:
@@ -20,7 +21,7 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size # private Attribute
+        self.__size = size
 
     def area(self):
         """int: area of the squeare based in size attr"""

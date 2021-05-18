@@ -9,5 +9,5 @@ class Square:
         size (int): area of the square
 
     """
-    def __init__(self, size = 0):
-        self.__size = size # private Attribute
+    def __init__(self, size=0):
+        self.__size = size  # private Attribute

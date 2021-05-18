@@ -9,7 +9,7 @@ class Square:
         size (int): area of the square, must be an integer and >=0
 
     """
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         """ __init__ method (self, size).
 
         Args:
@@ -21,7 +21,7 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size # private Attribute
+        self.__size = size
 
     @property
     def size(self):
@@ -42,6 +42,7 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
+        """print the square with the size attr"""
         square = ""
         for i in range(0, self.__size):
             for j in range(0, self.__size):

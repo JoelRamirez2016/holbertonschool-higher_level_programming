@@ -29,7 +29,7 @@ class Square:
 
     @property
     def position(self):
-        """int: getter of the squeare size"""
+        """int: getter of the squeare position"""
         return self.__position
 
     @property
@@ -37,8 +37,10 @@ class Square:
         """int: getter of the squeare size"""
         return self.__size
 
+    @position.setter
     def position(self, position):
-        if type(position) != tuple or type(position[0]) != int or type(position[1]) != int:
+        if type(position) != tuple or (type(position[0]) != int
+            or type(position[1]) != int):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 

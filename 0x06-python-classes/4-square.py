@@ -19,18 +19,20 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size # private Attribute
 
-    def area(self):
-        """int: area of the squeare based in size attr"""
-        return self.__size * 3
-
+    @property
     def size(self):
-        """int: getter function of size attr"""
+        """int: getter of the squeare size"""
         return self.__size
 
+    @size.setter
     def size(self, size):
-        """setter function of size attr"""
-        if type(size) is not int:
+        """setter of the square size"""
+        if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
+
+    def area(self):
+        """int: area of the squeare based in size attr"""
+        return self.__size * self.__size

@@ -21,4 +21,4 @@ class Square:
 
     def area(self):
         """int: area of the squeare based in size attr"""
-        return self.__size * 3
+        return self.__size * self.__size

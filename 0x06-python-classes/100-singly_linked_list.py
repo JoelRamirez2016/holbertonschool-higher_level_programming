@@ -64,8 +64,10 @@ class SinglyLinkedList:
         string = ""
 
         while (curr_node):
-            string += str(curr_node.data) + "\n"
+            string += str(curr_node.data)
             curr_node = curr_node.next_node
+            if curr_node:
+                string += "\n"
         return string
 
     def sorted_insert(self, value):

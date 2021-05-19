@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Define the class Node and SinglyLinkedList"""
+"""100-singly_linked_list
+Define the class Node and SinglyLinkedList
+"""
 
 
 class Node:
@@ -9,7 +11,7 @@ class Node:
         data (int): integer to store in the node
         next_node (Node): next node
     """
-    def __init__(self,data, next_node=None):
+    def __init__(self, data, next_node=None):
         """init_method to create a node
         Args:
             data (int): integer to store in the node
@@ -53,11 +55,15 @@ class SinglyLinkedList:
         head (Node): head Node of the list
     """
     def __init__(self):
-        """Initalize a new SinglyLinkedList"""
+        """Initalize a new SinglyLinkedList
+        """
         self.__head = None
 
     def __str__(self):
-        """string representation of the list"""
+        """String representation of the list
+        Returns:
+           formatted string
+        """
         curr_node = self.__head
         string = ""
 
@@ -69,7 +75,11 @@ class SinglyLinkedList:
         return string
 
     def sorted_insert(self, value):
-        """insert a new node created with data = value in ascendent order """
+        """Insert a new node created with data = value in ascendent order
+
+        Args:
+            value (int): The value of the Node to create.
+        """
         curr = self.__head
         newN = Node(value)
 
@@ -83,5 +93,3 @@ class SinglyLinkedList:
                 curr = curr.next_node
             newN.next_node = curr.next_node
             curr.next_node = newN
-
-

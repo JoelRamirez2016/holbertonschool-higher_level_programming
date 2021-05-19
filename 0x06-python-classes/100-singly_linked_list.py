@@ -9,7 +9,7 @@ class Node:
         data (int): integer to store in the node
         next_node (Node): next node
     """
-    def __init__(self, data, next_node=None):
+    def __init__(self,data, next_node=None):
         """init_method to create a node
         Args:
             data (int): integer to store in the node

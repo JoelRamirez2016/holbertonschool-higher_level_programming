@@ -24,19 +24,19 @@ class Node:
 
     @property
     def data(self):
-        """(int): Getter for the Node.data attr"""
+        """Get/set for the Node.data attr"""
         return self.__data
-
-    @property
-    def next_node(self):
-        """(Node): Getter for the Node.next_node attr"""
-        return self.__next_node
 
     @data.setter
     def data(self, value):
         if type(value) != int:
             raise TypeError("data must be an integer")
         self.__data = value
+
+    @property
+    def next_node(self):
+        """Get/set for the Node.next_node attr"""
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
@@ -53,11 +53,11 @@ class SinglyLinkedList:
         head (Node): head Node of the list
     """
     def __init__(self):
-        """Initalize a new SinglyLinkedList."""
+        """Initalize a new SinglyLinkedList"""
         self.__head = None
 
     def __str__(self):
-        """string representation of the list """
+        """string representation of the list"""
         curr_node = self.__head
         string = ""
 

@@ -83,3 +83,5 @@ class SinglyLinkedList:
                 curr = curr.next_node
             newN.next_node = curr.next_node
             curr.next_node = newN
+
+

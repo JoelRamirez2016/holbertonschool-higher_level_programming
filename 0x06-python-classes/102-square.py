@@ -37,36 +37,29 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
-
     def area(self):
         """int: area of the squeare based in size attr"""
         return self.__size * self.__size
-
 
     def __lt__(self, other):
         """Define comparison < between two Squares"""
         return self.area() < other.area()
 
-
     def __le__(self, other):
         """Define comparison <= between two Squares"""
         return self.area() <= other.area()  
-
 
     def __eq__(self, other):
         """Define comparison == between two Squares"""
         return self.area() == other.area()
 
-
     def __ne__(self, other):
         """Define comparison != between two Squares"""
         return self.area() != other.area()
 
-
     def __gt__(self, other):
         """Define comparison > between two Squares"""
         return self.area() > other.area()
-
 
     def __ge__(self, other):
         """Define comparison >= between two Squares"""

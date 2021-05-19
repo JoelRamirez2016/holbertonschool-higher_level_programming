@@ -86,7 +86,7 @@ class SinglyLinkedList:
         if curr is None:
             self.__head = newN
         elif curr.data > value:
-            newN.next_node = self.__head 
+            newN.next_node = self.__head
             self.__head = newN
         else:
             while (curr.next_node and curr.next_node.data < value):

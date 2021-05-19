@@ -34,14 +34,12 @@ class Node:
 
     @data.setter
     def data(self, value):
-        """setter for the Node.data attr"""
         if type(value) != int:
             raise TypeError("data must be an integer")
         self.__data = value
 
     @next_node.setter
     def next_node(self, value):
-        """setter for the Node.next_node attr"""
         if type(value) is not Node and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value

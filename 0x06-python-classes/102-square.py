@@ -47,7 +47,7 @@ class Square:
 
     def __le__(self, other):
         """Define comparison <= between two Squares"""
-        return self.area() <= other.area()  
+        return self.area() <= other.area()
 
     def __eq__(self, other):
         """Define comparison == between two Squares"""

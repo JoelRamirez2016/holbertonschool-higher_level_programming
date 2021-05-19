@@ -38,7 +38,7 @@ class Square:
         self.__size = size
 
     def area(self):
-        """int: area of the squeare based in size attr"""
+        """int: area of the square based in size attr"""
         return self.__size * self.__size
 
     def __lt__(self, other):

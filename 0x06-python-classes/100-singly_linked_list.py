@@ -1,6 +1,20 @@
-class Node:
+#!/usr/bin/python3
+"""Define the class Node and SinglyLinkedList"""
 
+
+class Node:
+    """Node: This class define a node to create linked list
+
+    Attributes:
+        data (int): integer to store in the node
+        next_node (Node): next node
+    """
     def __init__(self, data, next_node=None):
+        """init_method to create a node
+        Args:
+            data (int): integer to store in the node
+            next_node (Node): next node
+        """
         if type(data) != int:
             raise TypeError("data must be an integer")
         if type(next_node) is not Node and next_node is not None:
@@ -10,32 +24,42 @@ class Node:
 
     @property
     def data(self):
+        """(int): Getter for the Node.data attr"""
         return self.__data
 
     @property
     def next_node(self):
+        """(Node): Getter for the Node.next_node attr"""
         return self.__next_node
 
     @data.setter
     def data(self, value):
+        """setter for the Node.data attr"""
         if type(value) != int:
             raise TypeError("data must be an integer")
         self.__data = value
 
     @next_node.setter
     def next_node(self, value):
+        """setter for the Node.next_node attr"""
         if type(value) is not Node and value is not None:
             raise TypeError("next_node must be a Node object")
-        self.__data = value
+        self.__next_node = value
 
 
 class SinglyLinkedList:
+    """SinglyLinkedList: This class define the methods for a linked list
+    using Node implementation
 
+    Attributes:
+        head (Node): head Node of the list
+    """
     def __init__(self):
         """Initalize a new SinglyLinkedList."""
         self.__head = None
 
     def __str__(self):
+        """string representation of the list """
         curr_node = self.__head
         string = ""
 
@@ -45,6 +69,7 @@ class SinglyLinkedList:
         return string
 
     def sorted_insert(self, value):
+        """insert a new node created with data = value in ascendent order """
         curr = self.__head
         newN = Node(value)
 
@@ -53,10 +78,8 @@ class SinglyLinkedList:
         elif curr.data > value:
             newN.next_node = self.__head 
             self.__head = newN
-            print(self.__head)
-            print(self.__head.data.data)
-#        else:
-#            while (curr.next_node and curr.next_node.data < value):
-#                curr = curr.next_node
-#            newN.next_node = curr.next_node
-#            curr.next_node = newN
+        else:
+            while (curr.next_node and curr.next_node.data < value):
+                curr = curr.next_node
+            newN.next_node = curr.next_node
+            curr.next_node = newN

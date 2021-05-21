@@ -22,8 +22,8 @@ class Rectangle:
             width (int): width of the rectangle
             height (int): height of the rectangle
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -40,7 +40,7 @@ class Rectangle:
         self.__width = width
 
     @property
-    def height(self, height):
+    def height(self):
         """Get/seter of height attr"""
         return self.__height
 

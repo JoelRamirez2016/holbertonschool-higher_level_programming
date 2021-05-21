@@ -9,7 +9,7 @@ class Rectangle:
         width (int): width of the rectangle
         height (int): height of the rectangle
         number_of_instances (int): number of Rectangle instances created
-        print_symbol (str): symbol to be printed in the Rectangle 
+        print_symbol (str): symbol to be printed in the Rectangle
     """
 
     number_of_instances = 0

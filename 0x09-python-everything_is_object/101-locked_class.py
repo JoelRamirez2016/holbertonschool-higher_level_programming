@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-"""des"""
 
-class LockedClass(object):
-   """ des """
+class LockedClass:
     __slots__ = 'first_name', 

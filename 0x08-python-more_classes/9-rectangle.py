@@ -1,4 +1,4 @@
-#!/use/bin/python3
+#!/usr/bin/python3
 """This file create the Rectangle class"""
 
 

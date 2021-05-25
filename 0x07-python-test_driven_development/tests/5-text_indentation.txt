@@ -58,9 +58,42 @@ world.
 <BLANKLINE>
 4 line
 >>> text_indentation("          punntit  \n\n ? ")
-punntit  
+punntit
 <BLANKLINE>
 ?
 <BLANKLINE>
 >>> text_indentation("  pokemon  ")
 pokemon
+>>> text_indentation("   .      ?  \n      :     \n  \n")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+>>> text_indentation("   .      ?  \n      :     \n  \n   ")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+>>> text_indentation(" \n  .      ?  \n      :     \n  \n   ?   ")
+<BLANKLINE>
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+?
+<BLANKLINE>

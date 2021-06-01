@@ -32,3 +32,12 @@ Raises
     >>> bg.area()
     Traceback (most recent call last):
     Exception: area() is not implemented
+    >>> bg.integer_validator("meme", [2, 1, 3])
+    Traceback (most recent call last):
+    TypeError: meme must be an integer
+    >>> bg.integer_validator("Joe Due", False)
+    Traceback (most recent call last):
+    TypeError: Joe Due must be an integer
+    >>> bg.integer_validator("A", (2, 3, 4))
+    Traceback (most recent call last):
+    TypeError: A must be an integer

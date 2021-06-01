@@ -41,3 +41,9 @@ Raises
     >>> bg.integer_validator("A", (2, 3, 4))
     Traceback (most recent call last):
     TypeError: A must be an integer
+    >>> bg.integer_validator("Test None Case", None)
+    Traceback (most recent call last):
+    TypeError: Test None Case must be an integer
+    >>> bg.integer_validator("this is a dict", {2, 1})
+    Traceback (most recent call last):
+    TypeError: this is a dict must be an integer

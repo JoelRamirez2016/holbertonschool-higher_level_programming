@@ -18,4 +18,3 @@ for arg in sys.argv[1:]:
     l.append(arg)
 
 save_to_json_file(l, "add_item.json")
-

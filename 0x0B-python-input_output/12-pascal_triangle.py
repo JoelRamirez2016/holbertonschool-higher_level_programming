@@ -1,7 +1,14 @@
 #!/usr/bin/python3
+"""This module define the pascal_triangle function"""
 
 
 def pascal_triangle(n):
+    """Get a list of lists of ints representing the Pascal’s triangle of n
+    Args:
+        n (Always int): triangle height
+    Return:
+        list of lists of ints
+    """
     pascal = [[1]]
 
     if n <= 0:

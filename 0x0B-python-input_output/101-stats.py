@@ -34,12 +34,15 @@ if __name__ == '__main__':
 
             try:
                 size += statistics[1]
-                valid_status[statistics[0]] += 1
+
+                if statistics[0] in valid_status:
+                    valid_status[statistics[0]] += 1
             except:
                 pass
 
             if count % 10 == 0:
                 prints_statistics(valid_status, size)
+
         prints_statistics(valid_status, size)
     except KeyboardInterrupt:
         prints_statistics(valid_status, size)

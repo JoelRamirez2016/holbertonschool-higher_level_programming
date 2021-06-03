@@ -32,10 +32,15 @@ if __name__ == '__main__':
         for line in sys.stdin:
             count += 1
             statistics = [int(s) for s in line.split() if s.isdigit()]
-            size += statistics[1]
-            valid_status[statistics[0]] += 1
+
+            try:
+                size += statistics[1]
+                valid_status[statistics[0]] += 1
+            except:
+                pass
 
             if count % 10 == 0:
                 prints_statistics(valid_status, size)
     except KeyboardInterrupt:
         prints_statistics(valid_status, size)
+        raise

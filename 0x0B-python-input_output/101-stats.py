@@ -30,13 +30,11 @@ if __name__ == '__main__':
     try:
         for line in sys.stdin:
             count += 1
-            statistics = [int(s) for s in line.split() if s.isdigit()]
+            line = line.split()
 
             try:
-                size += statistics[1]
-
-                if statistics[0] in valid_status:
-                    valid_status[statistics[0]] += 1
+                size += int(line[-1])
+                valid_status[int(line[-2])] += 1
             except:
                 pass
 

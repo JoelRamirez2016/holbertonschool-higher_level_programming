@@ -5,7 +5,6 @@ prints those statistics since the beginning"""
 import sys
 
 
-
 def prints_statistics(statuses, size):
     """shows stored counts and total size
     Args:

@@ -80,6 +80,10 @@ class BaseTestCase(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             self.assertEqual(len(f.read()), 2)
 
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(len(f.read()), 2)
+
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(len(f.read()), 105)

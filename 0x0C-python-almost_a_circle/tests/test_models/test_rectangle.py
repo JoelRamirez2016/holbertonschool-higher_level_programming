@@ -39,11 +39,27 @@ class RectangleTestCase(unittest.TestCase):
             Rectangle(10, "2", "0", "0", "12")
             Rectangle([2, 2, 2, 2], {1, 2, 3}, 0, 0, 12)
             Rectangle(3.3, 4)
+            Rectangle({'a': 1, 'b': 3}, 3)
             Rectangle(2, float('inf'))
             Rectangle(1, float('nan'))
             Rectangle(45, False)
             Rectangle(complex(3), 3, 3)
             Rectangle(2, b'bId')
+            Rectangle(1, 2, None)
+            Rectangle(3, 2, 3, [])
+            Rectangle(3, 2, (2, 1), [])
+
+        with self.assertRaises(ValueError):
+            Rectangle(1, -1)
+            Rectangle(-2, 8)
+            Rectangle(0, 7)
+            Rectangle(1, 0)
+
+        with self.assertRaises(AttributeError):
+            Rectangle(5, 5, 0, 0, 1).__width
+            Rectangle(5, 5, 0, 0, 1).__height
+            Rectangle(5, 5, 0, 0, 1).__x
+            Rectangle(5, 5, 0, 0, 1).__y
 
     def test_rectangle_width(self):
         r = Rectangle(10, 1)
@@ -132,7 +148,7 @@ class RectangleTestCase(unittest.TestCase):
         r2 = Rectangle(2, 3)
         r3 = Rectangle(10, 2, 0, 0, 12)
         r4 = Rectangle(1, 1, 0, 0, "123")
-        r5 = Rectangle(1, 1, 0, 0, [1, 2, 3])
+        r5 = Rectangle(999999999999999, 999999999999999999, 0, 0, [1, 2, 3])
         r6 = Rectangle(10, 3, 0, 2, {1: 1, 2: 2})
         r7 = Rectangle(30, 1, 0, 0, {1, 2, 3})
 
@@ -140,9 +156,12 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(r2.area(), 6)
         self.assertEqual(r3.area(), 20)
         self.assertEqual(r4.area(), 1)
-        self.assertEqual(r5.area(), 1)
+        self.assertEqual(r5.area(), 999999999999998999000000000000001)
         self.assertEqual(r6.area(), 30)
         self.assertEqual(r7.area(), 30)
+
+        with self.assertRaises(TypeError):
+            r1.area(2, 1)
 
     def test_rectangle_display(self):
         r = Rectangle(1, 1)
@@ -192,6 +211,9 @@ class RectangleTestCase(unittest.TestCase):
                   "   ##\n" +
                   "   ##\n")
         self.assertEqual(answer, f.getvalue())
+
+        with self.assertRaises(TypeError):
+            r.display(4, 4)
 
     def test_rectangle_str(self):
         r = Rectangle(3, 3, 0, 0, 100)

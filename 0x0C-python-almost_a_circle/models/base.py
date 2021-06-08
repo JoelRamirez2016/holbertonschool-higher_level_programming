@@ -88,13 +88,12 @@ class Base:
 
     def draw(list_rectangles, list_squares):
         """Open a window and draws all the Rectangles and Squares"""
-        pass
-#        t = turtle.Turtle()
-#        for r in list_rectangles:
-#            for _ in range(4):
-#                if _% 2 == 0:
-#                    t.forward(l) # Forward turtle by l units
-#                    t.left(90) # Turn turtle by 90 degree
-#                else:
-#                    t.forward(w) # Forward turtle by w units
-#                    t.left(90) # Turn turtle by 90 degree
+        t = turtle.Turtle()
+        for r in list_rectangles:
+            for _ in range(4):
+                if _% 2 == 0:
+                    t.forward(20) # Forward turtle by l units
+                    t.left(90) # Turn turtle by 90 degree
+                else:
+                    t.forward(20) # Forward turtle by w units
+                    t.left(90) # Turn turtle by 90 degree

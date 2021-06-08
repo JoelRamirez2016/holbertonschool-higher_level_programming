@@ -2,6 +2,7 @@
 """This module define the Base class"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -78,7 +79,20 @@ class Base:
         try:
             with open(cls.__name__ + ".csv", "r") as f:
                 l = [{k: int(v) for k, v in row.items()}
-                    for row in csv.DictReader(f, skipinitialspace=True)]
+                     for row in csv.DictReader(f, skipinitialspace=True)]
                 return [cls.create(**dic) for dic in l]
         except FileNotFoundError:
             return []
+
+    def draw(list_rectangles, list_squares):
+        """Open a window and draws all the Rectangles and Squares"""
+        pass
+#        t = turtle.Turtle()
+#        for r in list_rectangles:
+#            for _ in range(4):
+#                if _% 2 == 0:
+#                    t.forward(l) # Forward turtle by l units
+#                    t.left(90) # Turn turtle by 90 degree
+#                else:
+#                    t.forward(w) # Forward turtle by w units
+#                    t.left(90) # Turn turtle by 90 degree

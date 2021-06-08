@@ -53,9 +53,10 @@ class BaseTestCase(unittest.TestCase):
         r1 = Rectangle(2, 1)
         s1 = Square(3)
         s2 = Square(2)
-        self.assertEqual(len(Rectangle.to_json_string([r1.to_dictionary()])), 52)
+        self.assertEqual(len(Rectangle.to_json_string(
+                             [r1.to_dictionary()])), 52)
         self.assertEqual(len(Square.to_json_string([s1.to_dictionary(),
-                                                  s2.to_dictionary()])), 76)
+                                                    s2.to_dictionary()])), 76)
         self.assertEqual(len(Base.to_json_string([r1.to_dictionary(),
                                                   s1.to_dictionary(),
                                                   s2.to_dictionary()])), 128)
@@ -108,7 +109,7 @@ class BaseTestCase(unittest.TestCase):
 
     def test_base_from_json_string(self):
         li = [
-            {'id': 89, 'width': 10, 'height': 4}, 
+            {'id': 89, 'width': 10, 'height': 4},
             {'id': 7, 'width': 1, 'height': 7}
         ]
         json = Rectangle.to_json_string(li)
@@ -122,7 +123,7 @@ class BaseTestCase(unittest.TestCase):
 
         li = [{'x': 2, 'width': 1, 'id': 41, 'height': 57, 'y': 1},
               {'x': 12, 'width': 210, 'id': 31, 'height': 57, 'y': 0},
-              {'x': 23, 'width': 40, 'id': 11, 'height': 8, "y": 5}] 
+              {'x': 23, 'width': 40, 'id': 11, 'height': 8, "y": 5}]
         json = Base.to_json_string(li)
         self.assertEqual(Base.from_json_string(json), li)
 
@@ -250,7 +251,7 @@ class BaseTestCase(unittest.TestCase):
         self.assertTrue(all(o.id in [r1.id, r2.id] for o in l))
 
         s1 = Square(25)
-        s2 = Square(20, 2, 3,56)
+        s2 = Square(20, 2, 3, 56)
         Square.save_to_file_csv([s1])
         l = Square.load_from_file_csv()
         self.assertTrue(all(o.id in [s1.id] for o in l))

@@ -38,6 +38,12 @@ class RectangleTestCase(unittest.TestCase):
             Rectangle(2, 2, 3, '1')
             Rectangle(10, "2", "0", "0", "12")
             Rectangle([2, 2, 2, 2], {1, 2, 3}, 0, 0, 12)
+            Rectangle(3.3, 4)
+            Rectangle(2, float('inf'))
+            Rectangle(1, float('nan'))
+            Rectangle(45, False)
+            Rectangle(complex(3), 3, 3)
+            Rectangle(2, b'bId')
 
     def test_rectangle_width(self):
         r = Rectangle(10, 1)

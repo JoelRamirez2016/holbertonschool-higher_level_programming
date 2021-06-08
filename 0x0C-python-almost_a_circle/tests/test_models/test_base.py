@@ -15,7 +15,7 @@ class BaseTestCase(unittest.TestCase):
     def test_base(self):
         """No need to test type in id attr"""
         b1 = Base()
-        b2 = Base()
+        b2 = Base(None)
         b3 = Base()
         b4 = Base()
         b5 = Base(5)
@@ -24,6 +24,12 @@ class BaseTestCase(unittest.TestCase):
         b8 = Base([1, 2, 3])
         b9 = Base({1: 1, 2: 2})
         b10 = Base({1, 2, 3})
+        b11 = Base(3.3)
+        b12 = Base(float('inf'))
+        b13 = Base(float('nan'))
+        b14 = Base(False)
+        b15 = Base(complex(3))
+        b16 = Base(b'bId')
         self.assertEqual(b1.id, b2.id - 1)
         self.assertEqual(b2.id, b3.id - 1)
         self.assertEqual(b3.id, b4.id - 1)
@@ -33,6 +39,16 @@ class BaseTestCase(unittest.TestCase):
         self.assertEqual(b7.id, "123")
         self.assertEqual(b8.id, [1, 2, 3])
         self.assertEqual(b9.id, {1: 1, 2: 2})
+        self.assertEqual(b10.id, {1, 2, 3})
+        self.assertEqual(b11.id, 3.3)
+        self.assertEqual(b12.id, float('inf'))
+        self.assertNotEqual(b13.id, float('nan'))
+        self.assertEqual(b14.id, False)
+        self.assertEqual(b15.id, complex(3))
+        self.assertEqual(b16.id, b'bId')
+
+        with self.assertRaises(TypeError):
+            Base(2, 2)
 
     def test_base_to_json_string(self):
         """Args of to_json_string is always list of dicts"""

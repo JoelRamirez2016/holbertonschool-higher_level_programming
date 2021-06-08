@@ -267,3 +267,6 @@ class BaseTestCase(unittest.TestCase):
         os.remove("Rectangle.csv")
         os.remove("Square.csv")
         os.remove("Base.csv")
+
+if __name__ == "__main__":
+    unittest.main()

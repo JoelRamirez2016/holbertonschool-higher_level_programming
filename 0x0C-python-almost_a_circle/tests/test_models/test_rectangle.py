@@ -288,3 +288,6 @@ class RectangleTestCase(unittest.TestCase):
         r = Rectangle(1, 1, 1, 1, -56)
         answer = {'x': 1, 'y': 1, 'id': -56, 'height': 1, 'width': 1}
         self.assertDictEqual(r.to_dictionary(), answer)
+
+if __name__ == "__main__":
+    unittest.main()

@@ -165,3 +165,6 @@ class SquareTestCase(unittest.TestCase):
         s = Square(1, 1, 1, -56)
         answer = {'x': 1, 'y': 1, 'id': -56, 'size': 1}
         self.assertDictEqual(s.to_dictionary(), answer)
+
+if __name__ == "__main__":
+    unittest.main()

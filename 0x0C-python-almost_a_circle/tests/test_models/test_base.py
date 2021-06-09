@@ -170,6 +170,7 @@ class BaseTestCase(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             Base.from_json_string()
+            Base.from_json_string(None)
             Base.from_json_string(1, 1, 1)
 
     def test_base_create(self):

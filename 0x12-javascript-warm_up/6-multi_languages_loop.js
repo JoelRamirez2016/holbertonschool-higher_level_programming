@@ -1,4 +1,5 @@
 #!/usr/bin/node
-for (const el of ['C is fun', 'Python is cool', 'Javascript is amazing']){
-  console.log(el);
-}
+
+const arr = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+
+for (const el of arr) console.log(el);

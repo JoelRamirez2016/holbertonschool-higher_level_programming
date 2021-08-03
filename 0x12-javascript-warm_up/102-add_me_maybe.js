@@ -1,4 +1,4 @@
 #!/usr/bin/node
-module.exports.callMeMoby = function (number, theFunction) {
+module.exports.addMeMaybe = function (number, theFunction) {
   theFunction(number + 1);
 }

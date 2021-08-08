@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-deletes all State objects with a name containing the letter a from the database hbtn_0e_6_usa
+deletes all State objects with a name containing the letter a
+from the database hbtn_0e_6_usa
 """
 
 import MySQLdb
@@ -16,6 +17,6 @@ if __name__ == "__main__":
     session = Session(engine)
 
     session.query(State).filter(State.name.like("%a%")).\
-    delete(synchronize_session="fetch")
+        delete(synchronize_session="fetch")
     session.commit()
     session.close()

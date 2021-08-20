@@ -9,6 +9,6 @@ if __name__ == "__main__":
                       data={'q': "" if len(sys.argv) == 1 else sys.argv[1]})
     try:
         j = r.json()
-        print("[{}] {}".format(j['id'], j['name']) if j else "No result")
+        print("[{}] {}".format(j['id'], j['name']) if j != {} else "No result")
     except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")

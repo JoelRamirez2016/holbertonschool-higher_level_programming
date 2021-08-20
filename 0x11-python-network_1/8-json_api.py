@@ -10,5 +10,5 @@ if __name__ == "__main__":
     try:
         j = r.json()
         print("[{}] {}".format(j['id'], j['name']) if j != {} else "No result")
-    except requests.exceptions.JSONDecodeError:
+    except Exception:
         print("Not a valid JSON")

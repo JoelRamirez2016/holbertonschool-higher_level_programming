@@ -5,4 +5,4 @@ import requests
 
 if __name__ == "__main__":
     r = requests.get("https://intranet.hbtn.io/status")
-    print(r.headers['X-Request-Id'])
+    print(r.headers.get('X-Request-Id'))

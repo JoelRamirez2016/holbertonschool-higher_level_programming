@@ -11,4 +11,4 @@ if __name__ == "__main__":
         with urllib.request.urlopen(Request(sys.argv[1])) as response:
             print(response.read().decode())
     except urllib.error.HTTPError as e:
-        print("Error code: ", e.code)
+        print("Error code:", e.code)

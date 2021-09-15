@@ -3,19 +3,19 @@
 const request = require('request');
 
 request.get(process.argv[2], function (error, response, body) {
+  const taskNumberCompleted = {};
+
   const data = error || JSON.parse(body).filter((obj) => {
-    return obj.completed 
+    return obj.completed;
   }, 0);
 
-  task_number_completed = {}
-
   for (let i = 0; i < data.length; i++) {
-    if (task_number_completed[data[i].userId]) {
-      task_number_completed[data[i].userId] += 1;
+    if (taskNumberCompleted[data[i].userId]) {
+      taskNumberCompleted[data[i].userId] += 1;
     } else {
-      task_number_completed[data[i].userId] = 1
+      taskNumberCompleted[data[i].userId] = 1;
     }
   }
 
-  console.log(task_number_completed);
+  console.log(taskNumberCompleted);
 });
